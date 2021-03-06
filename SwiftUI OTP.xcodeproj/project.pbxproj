@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		A65F4DF225F3977D00339279 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65F4DF125F3977D00339279 /* Preview Assets.xcassets */; };
 		A65F4DF425F3977D00339279 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4DF325F3977D00339279 /* Persistence.swift */; };
 		A65F4DF725F3977D00339279 /* SwiftUI_OTP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A65F4DF525F3977D00339279 /* SwiftUI_OTP.xcdatamodeld */; };
+		A65F4E0125F3997100339279 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E0025F3997100339279 /* Login.swift */; };
+		A65F4E0625F3E72D00339279 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = A65F4E0525F3E72D00339279 /* SwiftUIX */; };
+		A65F4E0E25F3FBF200339279 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E0D25F3FBF200339279 /* Verification.swift */; };
+		A65F4E1125F4286B00339279 /* Done.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E1025F4286B00339279 /* Done.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,9 @@
 		A65F4DF325F3977D00339279 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A65F4DF625F3977D00339279 /* SwiftUI_OTP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftUI_OTP.xcdatamodel; sourceTree = "<group>"; };
 		A65F4DF825F3977D00339279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A65F4E0025F3997100339279 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		A65F4E0D25F3FBF200339279 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
+		A65F4E1025F4286B00339279 /* Done.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Done.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A65F4E0625F3E72D00339279 /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +64,8 @@
 		A65F4DE925F3977A00339279 /* SwiftUI OTP */ = {
 			isa = PBXGroup;
 			children = (
+				A65F4E0825F3F54400339279 /* ViewModel */,
+				A65F4DFF25F3994600339279 /* View */,
 				A65F4DEA25F3977A00339279 /* SwiftUI_OTPApp.swift */,
 				A65F4DEC25F3977A00339279 /* ContentView.swift */,
 				A65F4DEE25F3977D00339279 /* Assets.xcassets */,
@@ -75,6 +85,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A65F4DFF25F3994600339279 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A65F4E0025F3997100339279 /* Login.swift */,
+				A65F4E0D25F3FBF200339279 /* Verification.swift */,
+				A65F4E1025F4286B00339279 /* Done.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A65F4E0825F3F54400339279 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,6 +118,9 @@
 			dependencies = (
 			);
 			name = "SwiftUI OTP";
+			packageProductDependencies = (
+				A65F4E0525F3E72D00339279 /* SwiftUIX */,
+			);
 			productName = "SwiftUI OTP";
 			productReference = A65F4DE725F3977A00339279 /* SwiftUI OTP.app */;
 			productType = "com.apple.product-type.application";
@@ -118,6 +148,9 @@
 				Base,
 			);
 			mainGroup = A65F4DDE25F3977A00339279;
+			packageReferences = (
+				A65F4E0425F3E72D00339279 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = A65F4DE825F3977A00339279 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -145,7 +178,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65F4DF425F3977D00339279 /* Persistence.swift in Sources */,
+				A65F4E0125F3997100339279 /* Login.swift in Sources */,
 				A65F4DF725F3977D00339279 /* SwiftUI_OTP.xcdatamodeld in Sources */,
+				A65F4E1125F4286B00339279 /* Done.swift in Sources */,
+				A65F4E0E25F3FBF200339279 /* Verification.swift in Sources */,
 				A65F4DED25F3977A00339279 /* ContentView.swift in Sources */,
 				A65F4DEB25F3977A00339279 /* SwiftUI_OTPApp.swift in Sources */,
 			);
@@ -336,6 +372,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A65F4E0425F3E72D00339279 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A65F4E0525F3E72D00339279 /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A65F4E0425F3E72D00339279 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A65F4DF525F3977D00339279 /* SwiftUI_OTP.xcdatamodeld */ = {
