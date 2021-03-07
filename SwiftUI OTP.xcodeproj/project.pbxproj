@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A628ABBE25F4EA4A003C1C6E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A628ABBD25F4EA4A003C1C6E /* FirebaseAuth */; };
+		A628ABC225F4EBFF003C1C6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A628ABC125F4EBFF003C1C6E /* GoogleService-Info.plist */; };
 		A65F4DEB25F3977A00339279 /* SwiftUI_OTPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4DEA25F3977A00339279 /* SwiftUI_OTPApp.swift */; };
 		A65F4DED25F3977A00339279 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4DEC25F3977A00339279 /* ContentView.swift */; };
 		A65F4DEF25F3977D00339279 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65F4DEE25F3977D00339279 /* Assets.xcassets */; };
@@ -20,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A628ABC125F4EBFF003C1C6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A65F4DE725F3977A00339279 /* SwiftUI OTP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI OTP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A65F4DEA25F3977A00339279 /* SwiftUI_OTPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_OTPApp.swift; sourceTree = "<group>"; };
 		A65F4DEC25F3977A00339279 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65F4E0625F3E72D00339279 /* SwiftUIX in Frameworks */,
+				A628ABBE25F4EA4A003C1C6E /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +68,7 @@
 		A65F4DE925F3977A00339279 /* SwiftUI OTP */ = {
 			isa = PBXGroup;
 			children = (
+				A628ABC125F4EBFF003C1C6E /* GoogleService-Info.plist */,
 				A65F4E0825F3F54400339279 /* ViewModel */,
 				A65F4DFF25F3994600339279 /* View */,
 				A65F4DEA25F3977A00339279 /* SwiftUI_OTPApp.swift */,
@@ -120,6 +125,7 @@
 			name = "SwiftUI OTP";
 			packageProductDependencies = (
 				A65F4E0525F3E72D00339279 /* SwiftUIX */,
+				A628ABBD25F4EA4A003C1C6E /* FirebaseAuth */,
 			);
 			productName = "SwiftUI OTP";
 			productReference = A65F4DE725F3977A00339279 /* SwiftUI OTP.app */;
@@ -150,6 +156,7 @@
 			mainGroup = A65F4DDE25F3977A00339279;
 			packageReferences = (
 				A65F4E0425F3E72D00339279 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				A628ABBC25F4EA4A003C1C6E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = A65F4DE825F3977A00339279 /* Products */;
 			projectDirPath = "";
@@ -167,6 +174,7 @@
 			files = (
 				A65F4DF225F3977D00339279 /* Preview Assets.xcassets in Resources */,
 				A65F4DEF25F3977D00339279 /* Assets.xcassets in Resources */,
+				A628ABC225F4EBFF003C1C6E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +382,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A628ABBC25F4EA4A003C1C6E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.7.0;
+			};
+		};
 		A65F4E0425F3E72D00339279 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
@@ -385,6 +401,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A628ABBD25F4EA4A003C1C6E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A628ABBC25F4EA4A003C1C6E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
 		A65F4E0525F3E72D00339279 /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A65F4E0425F3E72D00339279 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
