@@ -10,8 +10,10 @@ import Firebase
 
 @main
 struct SwiftUI_OTPApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDeletegate.self) var delegate
+    
     let persistenceController = PersistenceController.shared
-
     var body: some Scene {
         WindowGroup {
             ContentView()

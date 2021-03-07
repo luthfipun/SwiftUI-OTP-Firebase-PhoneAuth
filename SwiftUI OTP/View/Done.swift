@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Done: View {
+    
+    @AppStorage("isLoggedIn") var isLogin: Bool = false
+    
     var body: some View {
         VStack {
             Image("img3")
@@ -17,7 +20,9 @@ struct Done: View {
                 .fontWeight(.bold)
             
             Button(action: {
-                exit(-1)
+                
+                isLogin = true
+                
             }, label: {
                 Text("Done")
                     .font(.headline)

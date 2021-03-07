@@ -10,10 +10,7 @@ import SwiftUIX
 
 struct Login: View {
     
-    @State var phoneNumber = ""
-    @State var isLoading = false
-    @State var isVerify = false
-    @State var isVerified = false
+    @StateObject var viewModel = ViewModel()
     
     var body: some View {
         ZStack {
@@ -38,7 +35,7 @@ struct Login: View {
                     .foregroundColor(.gray)
                     .padding()
                 
-                TextField("+1", text: $phoneNumber)
+                TextField("+1", text: $viewModel.phoneNumber)
                     .font(.title2)
                     .frame(maxWidth: UIScreen.main.bounds.width / 2, maxHeight: 60)
                     .keyboardType(.phonePad)
@@ -49,7 +46,7 @@ struct Login: View {
                 
                 Button(action: {
                     withAnimation {
-                        isVerify.toggle()
+                        viewModel.sendCode()
                     }
                 }, label: {
                     Text("Send OTP")
@@ -63,22 +60,25 @@ struct Login: View {
                         
                 }).padding()
             }
-            .blur(radius: isLoading || isVerify || isVerified ? 20 : 0)
+            .blur(radius: viewModel.isLoading || viewModel.isVerify || viewModel.isVerified ? 20 : 0)
             
-            if isLoading {
+            if viewModel.isLoading {
                 Loading()
             }
             
-            Verification(isVerify: $isVerify, phoneNumber: $phoneNumber)
-                .opacity(isVerify ? 1 : 0)
-                .scaleEffect(CGSize(width: isVerify ? 1 : 0, height: isVerify ? 1 : 0), anchor: .center)
+            Verification(viewModel: viewModel)
+                .opacity(viewModel.isVerify ? 1 : 0)
+                .scaleEffect(CGSize(width: viewModel.isVerify ? 1 : 0, height: viewModel.isVerify ? 1 : 0), anchor: .center)
                 .animation(.interpolatingSpring(stiffness: 200, damping: 10, initialVelocity: 5))
             
             Done()
-                .opacity(isVerified ? 1 : 0)
-                .scaleEffect(CGSize(width: isVerified ? 1 : 0, height: isVerified ? 1 : 0), anchor: .center)
+                .opacity(viewModel.isVerified ? 1 : 0)
+                .scaleEffect(CGSize(width: viewModel.isVerified ? 1 : 0, height: viewModel.isVerified ? 1 : 0), anchor: .center)
                 .animation(.interpolatingSpring(stiffness: 200, damping: 10, initialVelocity: 5))
         }
+        .alert(isPresented: $viewModel.isError, content: {
+            Alert(title: Text("Error"), message: Text(viewModel.errorMsg))
+        })
     }
 }
 

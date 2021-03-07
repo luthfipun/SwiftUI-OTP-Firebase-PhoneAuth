@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A628ABBE25F4EA4A003C1C6E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A628ABBD25F4EA4A003C1C6E /* FirebaseAuth */; };
 		A628ABC225F4EBFF003C1C6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A628ABC125F4EBFF003C1C6E /* GoogleService-Info.plist */; };
+		A628ABC525F52F06003C1C6E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A628ABC425F52F06003C1C6E /* ViewModel.swift */; };
+		A628ABC825F535C3003C1C6E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A628ABC725F535C3003C1C6E /* Home.swift */; };
 		A65F4DEB25F3977A00339279 /* SwiftUI_OTPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4DEA25F3977A00339279 /* SwiftUI_OTPApp.swift */; };
 		A65F4DED25F3977A00339279 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4DEC25F3977A00339279 /* ContentView.swift */; };
 		A65F4DEF25F3977D00339279 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65F4DEE25F3977D00339279 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		A628ABC125F4EBFF003C1C6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A628ABC425F52F06003C1C6E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A628ABC725F535C3003C1C6E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		A65F4DE725F3977A00339279 /* SwiftUI OTP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI OTP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A65F4DEA25F3977A00339279 /* SwiftUI_OTPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_OTPApp.swift; sourceTree = "<group>"; };
 		A65F4DEC25F3977A00339279 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 				A65F4E0025F3997100339279 /* Login.swift */,
 				A65F4E0D25F3FBF200339279 /* Verification.swift */,
 				A65F4E1025F4286B00339279 /* Done.swift */,
+				A628ABC725F535C3003C1C6E /* Home.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 		A65F4E0825F3F54400339279 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A628ABC425F52F06003C1C6E /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -189,8 +195,10 @@
 				A65F4E0125F3997100339279 /* Login.swift in Sources */,
 				A65F4DF725F3977D00339279 /* SwiftUI_OTP.xcdatamodeld in Sources */,
 				A65F4E1125F4286B00339279 /* Done.swift in Sources */,
+				A628ABC825F535C3003C1C6E /* Home.swift in Sources */,
 				A65F4E0E25F3FBF200339279 /* Verification.swift in Sources */,
 				A65F4DED25F3977A00339279 /* ContentView.swift in Sources */,
+				A628ABC525F52F06003C1C6E /* ViewModel.swift in Sources */,
 				A65F4DEB25F3977A00339279 /* SwiftUI_OTPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

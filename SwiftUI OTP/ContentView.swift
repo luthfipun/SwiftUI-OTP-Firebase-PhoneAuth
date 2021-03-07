@@ -9,8 +9,15 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    @AppStorage("isLoggedIn") var isLogin: Bool = false
+    
     var body: some View {
-        Login()
+        if isLogin {
+            Home()
+        }else {
+            Login()
+        }
     }
 }
 

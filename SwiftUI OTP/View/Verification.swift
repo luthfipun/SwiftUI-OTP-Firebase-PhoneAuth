@@ -10,9 +10,8 @@ import SwiftUIX
 
 struct Verification: View {
     
-    @Binding var isVerify: Bool
+    @ObservedObject var viewModel: ViewModel
     
-    @Binding var phoneNumber: String
     @State var countPin = 6
     @State var currentFocus = 0
     
@@ -22,6 +21,8 @@ struct Verification: View {
     @State var pin4 = ""
     @State var pin5 = ""
     @State var pin6 = ""
+    
+    @State var isLoading: Bool = false
     
     var body: some View {
         VStack {
@@ -33,7 +34,7 @@ struct Verification: View {
                 .fontWeight(.bold)
                 .padding(.top)
             
-            Text("Enter the OTP send to \(Text(phoneNumber).fontWeight(.bold).foregroundColor(.black))")
+            Text("Enter the OTP send to \(Text(viewModel.phoneNumber).fontWeight(.bold).foregroundColor(.black))")
                 .font(.callout)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
@@ -177,7 +178,10 @@ struct Verification: View {
             }
             
             Button(action: {
-                isVerify.toggle()
+                
+                let code = pin1+pin2+pin3+pin4+pin5+pin6
+                viewModel.verifyCode(code: code)
+                
             }, label: {
                 Text("Verify")
                     .font(.headline)
@@ -187,7 +191,13 @@ struct Verification: View {
                     .background(Color("Primary"))
                     .cornerRadius(6)
                     .shadow(color: Color("Primary").opacity(0.8), radius: 6, x: 1, y: 1)
-            }).padding()
+                    .opacity(viewModel.isLoadingVerify ? 0.2 : 1)
+                    .overlay(
+                        viewModel.isLoadingVerify ? ProgressView() : nil
+                    )
+            })
+            .padding()
+            .disabled(viewModel.isLoadingVerify)
         }
         .frame(maxWidth: UIScreen.main.bounds.width / 1.2)
         .padding()
